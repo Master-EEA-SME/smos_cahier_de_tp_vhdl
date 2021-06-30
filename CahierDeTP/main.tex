@@ -1,0 +1,23 @@
+  
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[margin=2.5cm, paperwidth=21cm, paperheight=29.7cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{listing}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\renewcommand{\thesection}{\arabic{section}}
+% Load config
+\include{src/config/constants}
+\begin{document}
+
+\include{src/00-CoverPage}
+\newpage
+% 
+\setcounter{page}{2}
+\include{src/01-Content}
+\newpage
+\include{src/02-Annexes}
+\clearpage
+\end{document}
