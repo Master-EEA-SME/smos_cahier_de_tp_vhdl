@@ -1,5 +1,4 @@
-\chapter*{Initiation au VHDL}
-\setcounter{page}{1}
+\chapter{Initiation au VHDL}
 \section{Introduction}
 Le but de ce TP est de prendre en main le langage VHDL afin de maîtriser ses fondamentaux. Ce TP a pour but aussi de prendre en main le logiciel Quartus qui permet de mettre en œuvre des solutions sur les FPGA Altera.
 \section{Logique combinatoire}
@@ -170,3 +169,94 @@ Valider votre implémentation en simulation.
 \medskip
 
 Valider votre implémentation sur votre carte.
+
+\chapter{Utilisation du processeur Nios}
+\section{Introduction}
+Le but de ce TP est de prendre en main l'outil \textit{Platform Designer} afin de pouvoir mettre en œuvre des solutions complexes et ciblés basé sur le processeur \textit{Nios II} et le bus \textit{Avalon}.
+
+
+\section{Construction d'un microcontrôleur personnalisé}
+\label{sec:BuildMCU}
+A l'aide de l'outil \textit{Platform Designer}, construire un microcontrôleur basé sur le processeur \textit{Nios II} en ajoutant les périphériques suivants :
+\begin{itemize}
+    \item Nios II
+    \item On Chip RAM (où le code sera stocké)
+    \item JTAG UART (pour avoir une console série + pouvoir debugger)
+    \item PIO (pour pouvoir contrôler des Leds)
+\end{itemize}
+
+\medskip
+
+Générer le VHDL.
+
+\medskip
+
+Connecter la sortie du périphérique \textit{PIO} aux Leds de la carte DE0 Nano.
+
+\medskip
+
+Compiler et téléverser la configuration du FPGA vers votre carte.
+
+\medskip
+
+En utilisant le logiciel \textit{Nios II Software Build Tools for Eclipse} créer un projet en prenant comme modèle de projet \textbf{Hello World Small}.
+
+\medskip
+
+Sans toucher au code qui a été généré, compiler et téléverser vers le Nios. Vérifier que \textit{"Hello from Nios II!"} s'affiche bien sur la console \textit{Nios II Console}.
+
+\medskip
+
+Écrire un code qui permet de faire un chenillard va et vient sur les Leds en utilisant le périphérique PIO.
+
+\section{Ajout d'un périphérique personnalisé au microcontrôleur}
+\subsection{PWM}
+Créer un composant VHDL qui permet de générer un signal PWM sur une broche. Le PWM doit avoir une résolution de \textbf{32 bits}.
+
+\medskip
+
+Faire un diagramme fonctionnel de ce composant.
+
+\medskip
+
+Décrire l'entité et implémenter l'architecture en utilisant le diagramme fonctionnel.
+
+\medskip
+
+Simuler et vérifier que votre composant crée bien un signal PWM avec la fréquence et le rapport cyclique variable.
+
+\subsection{Interface avec le bus Avalon}
+
+Créer un composant VHDL qui permet d'interfacer le composant PWM que vous venez créer, avec le processeur Nios II à l'aide du bus Avalon. La table d'adressage doit être la suivante :
+
+\begin{table}[ht]
+    \centering
+    \begin{bytefield}[endianness=big, bitwidth=0.5cm, bitheight=0.5cm, rightcurly=., rightcurlyspace=0pt]{32}
+        \bitheader{0,7,8,15,16,23,24,31} \\
+        \begin{rightwordgroup}{00h}
+            \bitbox{32}{Duty}
+        \end{rightwordgroup} \\
+        \begin{rightwordgroup}{01h}
+            \bitbox{32}{Freq}
+        \end{rightwordgroup}
+    \end{bytefield}
+    \caption{Adressage du composant PWM sur le bus Avalon}
+\end{table}
+
+En utilisant l'outil \textit{Platform Designer}, ajouter votre composant d'interface que vous venez de créer pour qu'il soit reconnu comme un périphérique Avalon sur Platform Designer.
+
+\medskip
+
+Intégrer ce composant au microcontrôleur que vous avez créer en \ref{sec:BuildMCU} et exporter la sortie du composant PWM. Générer le VHDL du système.
+
+\medskip
+
+Affectez la sortie de votre PWM à une broche quelconque.
+
+\medskip
+
+Compiler et téléverser la nouvelle configuration du FPGA vers votre carte.
+
+\medskip
+
+Avec \textit{Nios II Software Build Tools for Eclipse}, tester votre périphérique en changeant le rapport cyclique et la fréquence. Valider le fonctionnent à l'aide d'un oscilloscope.
