@@ -30,7 +30,7 @@ Implémenter l'architecture de la porte ET à l'aide de la table de vérité.
 
 \medskip
 
-Simuler et vérifier bien le bon à l'aide de la table de vérité.
+Simuler et vérifier le bon fonctionnement de la porte ET à l'aide de la table de vérité.
 
 \medskip
 
@@ -50,11 +50,11 @@ Faire la table de vérité de l'afficheur sept segments pour les chiffres allant
 
 \medskip
 
-Décriver l'entité et l'architecture votre table de vérité en VHDL.
+Décrire l'entité et l'architecture votre table de vérité en VHDL.
 
 \medskip
 
-Simuler et vérifier bien le bon comportement de votre table de vérité
+Simuler et vérifier le bon comportement de votre table de vérité
 
 \medskip
 
@@ -70,8 +70,6 @@ Voici la table de vérité d'un simple compteur :
         $ARst\_N$ & $Clk$ & $En$ & $Q_n$ \\ 
         \hline
         0 & * & * & 0 \\
-        1 & 0 & * & $Q_{n-1}$ \\
-        1 & 1 & * & $Q_{n-1}$ \\
         1 & \risingedge & 0 & $Q_{n-1}$ \\
         1 & \risingedge & 1 & $Q_{n-1} + 1$
 
@@ -89,16 +87,16 @@ Simuler votre compteur et vérifier que votre implémentation respecte bien la t
 
 \subsection{Cascade de compteurs}
 
-Faites un compteur qui comptera toutes les secondes. Afficher la valeur de ce compteur sur un afficheur sept segments. Ce compteur devra compter 0 à 15.
+Faire un compteur qui comptera toutes les secondes. Afficher la valeur de ce compteur sur un afficheur sept segments. Ce compteur devra compter 0 à 15.
 
 \medskip
 
-Faites un schèma fonctionnel en faisant apparaître deux compteurs en cascades. \\ 
+Faire un schéma fonctionnel en faisant apparaître deux compteurs en cascades. \\ 
 \textbf{NB: Il est interdit de connecter aux entrées horloges autres que des signaux horloges}.
 
 \medskip
 
-Implémenter votre schèma fonctionnel en VHDL.
+Implémenter votre schéma fonctionnel en VHDL.
 
 \medskip
 
