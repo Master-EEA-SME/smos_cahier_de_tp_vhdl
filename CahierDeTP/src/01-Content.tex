@@ -65,12 +65,13 @@ Voici la table de vérité d'un simple compteur :
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{c c c|c} 
-        $ARst\_N$ & $Clk$ & $En$ & $Q_n$ \\ 
+    \begin{tabular}{c c c c|c} 
+        $ARst\_N$ & $Clk$ & $SRst$ &$En$ & $Q_t$ \\ 
         \hline
-        0 & * & * & 0 \\
-        1 & \risingedge & 0 & $Q_{n-1}$ \\
-        1 & \risingedge & 1 & $Q_{n-1} + 1$
+        0 & *           & * & * & 0 \\
+        1 & \risingedge & 1 & * & * \\
+        1 & \risingedge & 0 & 0 & $Q_{t-1}$ \\
+        1 & \risingedge & 0 & 1 & $Q_{t-1} + 1$
 
     \end{tabular}
     \caption{Table de vérité d'un compteur}
