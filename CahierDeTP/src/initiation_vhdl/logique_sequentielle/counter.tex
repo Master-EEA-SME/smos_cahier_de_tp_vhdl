@@ -1,0 +1,47 @@
+\subsection{Compteur}
+\label{sec:BasicCnt}
+Voici la table de vérité d'un simple compteur : 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c c c c|c} 
+        $ARst\_N$ & $Clk$ & $SRst$ &$En$ & $Q_t$ \\ 
+        \hline
+        0 & *           & * & * & 0 \\
+        1 & \risingedge & 1 & * & 0 \\
+        1 & \risingedge & 0 & 0 & $Q_{t-1}$ \\
+        1 & \risingedge & 0 & 1 & $Q_{t-1} + 1$
+
+    \end{tabular}
+    \caption{Table de vérité d'un compteur}
+    \label{ttab:BasicCnt}
+\end{table}
+
+Implémenter cette table de vérité en VHDL en utilisant un \textit{process} et \textbf{respectant bien la priorité}. Contraigner le vecteur $Q_n$ sur \textbf{8 bits}.
+
+\medskip
+
+Simuler votre compteur et vérifier que votre implémentation respecte bien la table de vérité.
+
+
+\subsection{Cascade de compteurs}
+
+Faire un compteur qui comptera toutes les secondes. Afficher la valeur de ce compteur sur un afficheur sept segments. Ce compteur devra compter 0 à 15.
+
+\medskip
+
+Faire un schéma fonctionnel en faisant apparaître deux compteurs en cascades. \\ 
+\textbf{NB: Il est interdit de connecter aux entrées horloges autres que des signaux horloges}.
+
+\medskip
+
+Implémenter votre schéma fonctionnel en VHDL.
+
+\medskip
+
+A l'aide de l'analyseur logique (Signal Tap Logic Analyzer) visualiser le signal \textit{Q} des compteurs ainsi que le signal \textit{En} du second compteur. 
+
+\medskip
+
+Compiler, programmer et en utilisant l'analyseur logique, déclencher l'acquisition lorsque \textit{En} vaut $1$. Vérifier que \textit{En} est à $1$ que pendant un seul coup d'horloge.
+
