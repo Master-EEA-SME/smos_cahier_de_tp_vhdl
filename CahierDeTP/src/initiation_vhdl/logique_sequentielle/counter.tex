@@ -1,5 +1,7 @@
 \subsection{Compteur}
 \label{sec:BasicCnt}
+Un des blocs les plus utilisées en VHDL sont les compteurs. Ils sont très utiles dans plusieurs circonstances. Par exemple : compter des fronts, avoir des bases de temps, compter des événements \dots
+
 Voici la table de vérité d'un simple compteur : 
 
 \begin{table}[ht]
@@ -23,13 +25,17 @@ Voici la table de vérité d'un simple compteur :
 
 - Simuler votre compteur et vérifier que votre implémentation respecte bien la table de vérité.
 
+\medskip
+
 - Ajouter le paramètre générique $N$ qui permettra de choisir la taille du vecteur $q_n$ lorsqu'on instancie ce compteur.
+
+\medskip
 
 - Simuler votre compteur pour $N = 7$. A quelle valeur votre compteur reboucle? Pourquoi?
 
 \subsection{Cascade de compteurs}
 
-On veut faire un compteur qui s’incrémente toute les secondes. On veut visualiser ce compteur sur un afficheur sept segments en hexadécimal. Ce compteur devra compter de $0_d$ à $15_d$.
+On veut faire un compteur qui s’incrémente toutes les secondes. On veut visualiser le contenu de ce compteur sur un afficheur sept segments. Son contenu sera affiché en hexadecimal. Ce compteur devra compter de $0_d$ à $15_d$.
 
 \medskip
 
@@ -42,7 +48,7 @@ On veut faire un compteur qui s’incrémente toute les secondes. On veut visual
 
 \medskip
 
-- Simuler votre le schema fonctionnel. Pour éviter de simuler une seconde, faire incrémenter le compteur toutes les millisecondes au lieu de toutes les secondes.
+- Simuler votre le schéma fonctionnel. Pour éviter de simuler une seconde, faire incrémenter le compteur toutes les millisecondes au lieu de toutes les secondes.
 
 \medskip
 

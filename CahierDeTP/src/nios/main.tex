@@ -39,23 +39,24 @@ Sans toucher au code qui a été généré, compiler et téléverser vers le Nio
 
 \section{Ajout d'un périphérique personnalisé au microcontrôleur}
 \subsection{PWM}
-Créer un composant VHDL qui permet de générer un signal PWM sur une broche. Le PWM doit avoir une résolution de \textbf{32 bits}.
+
+On veut créer un composant VHDL qui permet de générer un signal PWM d'haute résolution sur une broche. Ce composant on veut l'interfacer avec le processeur NIOS II à l'aide du bus Avalon. Le PWM aura une résolution de \textbf{32 bits}.
 
 \medskip
 
-Faire un diagramme fonctionnel de ce composant.
+- Faire un diagramme fonctionnel du composant PWM sans prendre en compte le NIOS ni le bus Avalon.
 
 \medskip
 
-Décrire l'entité et implémenter l'architecture en utilisant le diagramme fonctionnel.
+- Décrire l'entité et implémenter l'architecture en utilisant le diagramme fonctionnel.
 
 \medskip
 
-Simuler et vérifier que votre composant crée bien un signal PWM avec la fréquence et le rapport cyclique variable.
+- Simuler et vérifier que votre composant crée bien un signal PWM avec la fréquence et le rapport cyclique variable.
 
 \subsection{Interface avec le bus Avalon}
 
-Créer un composant VHDL qui permet d'interfacer le composant PWM que vous venez créer, avec le processeur Nios II à l'aide du bus Avalon. La table d'adressage doit être la suivante :
+- Créer un composant VHDL qui permet d'interfacer le composant PWM que vous venez créer, avec le processeur Nios II à l'aide du bus Avalon. La table d'adressage doit être la suivante :
 
 \begin{table}[ht]
     \centering
@@ -68,23 +69,23 @@ Créer un composant VHDL qui permet d'interfacer le composant PWM que vous venez
             \bitbox{32}{Freq}
         \end{rightwordgroup}
     \end{bytefield}
-    \caption{Adressage du composant PWM sur le bus Avalon}
+    \caption{Table d'adressage du composant PWM sur le bus Avalon}
 \end{table}
 
-En utilisant l'outil \textit{Platform Designer}, ajouter votre composant d'interface que vous venez de créer pour qu'il soit reconnu comme un périphérique Avalon.
+- En utilisant l'outil \textit{Platform Designer}, ajouter votre composant d'interface que vous venez de créer pour qu'il soit reconnu comme un périphérique Avalon.
 
 \medskip
 
-Intégrer ce composant au microcontrôleur que vous avez créer en \ref{sec:BuildMCU} et exporter la sortie du composant PWM. Générer le VHDL du système.
+- Intégrer ce composant au microcontrôleur que vous avez créer dans l’exercice \ref{sec:BuildMCU} et exporter la sortie du composant PWM. Générer le VHDL du système.
 
 \medskip
 
-Affectez la sortie de votre PWM à une broche quelconque.
+- Affecter la sortie du PWM à une broche quelconque.
 
 \medskip
 
-Compiler et téléverser la nouvelle configuration du FPGA vers votre carte.
+- Compiler et téléverser la nouvelle configuration du FPGA vers votre carte.
 
 \medskip
 
-Avec \textit{Nios II Software Build Tools for Eclipse}, tester votre périphérique en changeant le rapport cyclique et la fréquence. Valider le fonctionnent à l'aide d'un oscilloscope.
+- Avec \textit{Nios II Software Build Tools for Eclipse}, tester votre périphérique en changeant le rapport cyclique et la fréquence. Valider le fonctionnent à l'aide d'un oscilloscope.

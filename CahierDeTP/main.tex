@@ -16,6 +16,10 @@
 \renewcommand{\thesection}{\arabic{section}}
 % Load config
 \input{src/config/constants}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
 \begin{document}
 
 \include{src/cover_page}
