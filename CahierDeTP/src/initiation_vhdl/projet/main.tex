@@ -1,26 +1,34 @@
-\subsection{Machine à états}
-Modéliser une machine a états qui permet d'incrémenter un compteur \textbf{d'une unité} lorsque l'on appuie sur un bouton.
+\section{Mini projet - Horloge}
+
+L'horloge n'affichera que les \textbf{heures} et les \textbf{minutes}. L'affichage des dizaine et unités des heures et des minutes se fera sur afficheur sept segments chacun.
 
 \medskip
 
-Créer le composant \textit{FsmBtn} et implémenter \textbf{uniquement} la machine à états.
+L'horloge aura deux modes de fonctionnement. Un mode normal où l'heure compte normalement et un mode configuration où on pourra venir modifier les heures et les minutes.
+
+\medskip
+Si on appuie sur \textit{KEY1}, on rentre en mode configuration. L'horloge arrête de compter tant qu'on est dans le mode configuration.
 
 \medskip
 
-Valider le bon fonctionnement de votre machine à états en utilisant un compteur et en visualisant son contenu sur un afficheur sept segments. Utiliser le bouton \textit{KEY0} incrémenter le compteur.
+Dans le mode configuration lorsqu'on appuie sur \textit{KEY0} ou \textit{KEY2}, on incrémentera ou décrémentera respectivement soit les heures soit les minutes.
 
 \medskip
 
-Sur le compteur de \ref{sec:BasicCnt}, ajouter le signal \textit{ud} qui permettra de changer la direction de comptage du compteur. Ce signal est le moins prioritaire de tous.
+Lorsqu'on entre en mode configuration, ce sont les minutes qui pourront être modifiées. Lors d'un nouvel appui sur \textit{KEY1} et ce seront les heures qui pourront être modifiées. Un nouvel appui sur \textit{KEY1}, on revient en mode normal.
 
 \medskip
 
-Ajouter le nouveau signal à la table de vérité \ref{ttab:BasicCnt}.
+- En utilisant les composants et en modélisant des nouveaux, faire un schéma fonctionnel et les machines à états nécessaires pour modéliser l'horloge.
 
 \medskip
 
-Valider le bon fonctionnement en simulation.
+- Implémenter votre modélisation en VHDL.
 
 \medskip
 
-En ajoutant une nouvelle instance du composant \textit{FsmBtn}, ajouter la fonctionnalité de décrémenter le compteur \textbf{d'une unité} lorsque l'on appuie sur un autre bouton. Utiliser le bouton \textit{KEY1} décrémenter le compteur.
+- Valider votre implémentation en simulation.
+
+\medskip
+
+- Valider votre implémentation sur votre carte.

@@ -1,26 +1,27 @@
 \subsection{Machine à états}
-Modéliser une machine a états qui permet d'incrémenter un compteur \textbf{d'une unité} lorsque l'on appuie sur un bouton.
+On veut modéliser un composant qui va commander un compteur.
+
+Lorsqu'on appuie sur le bouton incrémenter, cela incrémentera de $1$ le compteur.
+
+Lorsqu'on appuie sur le bouton décrémenter, cela décrémentera de $1$ le compteur.
+
+Si les deux boutons sont appuyés, rien ne se passe.
+
+Le contenu du compteur sera visualisé sur un afficheur sept-segments.
 
 \medskip
 
-Créer le composant \textit{FsmBtn} et implémenter \textbf{uniquement} la machine à états.
+- Quelle fonctionnalité faut-il ajouter au compteur de \ref{sec:BasicCnt} pour pouvoir répondre au besoin ci-dessus. Compléter la table de vérité \ref{ttab:BasicCnt}. Implémenter cette fonctionnalité. Simuler le compteur.
+
 
 \medskip
 
-Valider le bon fonctionnement de votre machine à états en utilisant un compteur et en visualisant son contenu sur un afficheur sept segments. Utiliser le bouton \textit{KEY0} incrémenter le compteur.
+- Modéliser la machine à états qui implémente la fonctionnalité d'un bouton. Créer le composant \textit{fsm\_btn} et implémenter la machine à états que vous avez modélisé. Simuler le composant.
 
 \medskip
 
-Sur le compteur de \ref{sec:BasicCnt}, ajouter le signal \textit{ud} qui permettra de changer la direction de comptage du compteur. Ce signal est le moins prioritaire de tous.
+- Faire un schéma fonctionnel du problème en incluant le composant \textit{fsm\_btn} et qui intègre les deux boutons. Implémenter votre schéma fonctionnel en VHDL. Simuler.
 
 \medskip
 
-Ajouter le nouveau signal à la table de vérité \ref{ttab:BasicCnt}.
-
-\medskip
-
-Valider le bon fonctionnement en simulation.
-
-\medskip
-
-En ajoutant une nouvelle instance du composant \textit{FsmBtn}, ajouter la fonctionnalité de décrémenter le compteur \textbf{d'une unité} lorsque l'on appuie sur un autre bouton. Utiliser le bouton \textit{KEY1} décrémenter le compteur.
+- Compiler et valider le bon fonctionnement sur la carte.
