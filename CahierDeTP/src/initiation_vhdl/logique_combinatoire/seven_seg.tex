@@ -12,7 +12,7 @@ Un afficheur sept segments est utilisé pour afficher des informations vers un u
 
 \medskip
 
-- On veut afficher sur l'afficheur les chiffres allant de $0_h$ à $F_h$. Combien de bits il faut en entrée et sortie pour pouvoir représenter ces chiffres.
+- On veut afficher sur l'afficheur les chiffres allant de $0_h$ à $F_h$. Combien de bits il faut en entrée et en sortie pour pouvoir représenter ces chiffres.
 
 \medskip
 
@@ -20,7 +20,9 @@ Un afficheur sept segments est utilisé pour afficher des informations vers un u
 
 \medskip
 
-- Décrire l'entité et l'architecture de votre table de vérité en VHDL.
+- Décrire l'entité \textbf{seven\_segment} et l'architecture \textbf{rtl} de votre table de vérité en VHDL. 
+
+\textbf{Note: Décrire les segments A, B, C, D, E, F comme un vecteur.}
 
 \medskip
 
@@ -29,3 +31,7 @@ Un afficheur sept segments est utilisé pour afficher des informations vers un u
 \medskip
 
 - Connecter les entrées de votre décodeur sept segments aux switchs (SW$x$) et les sorties aux afficheurs sept segments (HEX$x$) de la carte DE2. Tester et vérifier le bon fonctionnement.
+
+\medskip
+
+- Instancier le composant \textit{seven\_segment} à un module top level ou faire les modifications nécessaires au composant \textit{seven\_segment} pour que les bons segments s'allument.

@@ -1,6 +1,6 @@
 \subsection{Compteur}
 \label{sec:BasicCnt}
-Un des blocs les plus utilisées en VHDL sont les compteurs. Ils sont très utiles dans plusieurs circonstances. Par exemple : compter des fronts, avoir des bases de temps, compter des événements \dots
+Un des blocs les plus utilisés en VHDL est le compteur. Ils sont très utiles dans plusieurs circonstances. Par exemple : compter des fronts, avoir des bases de temps, compter des événements \dots
 
 Voici la table de vérité d'un simple compteur : 
 
@@ -19,7 +19,9 @@ Voici la table de vérité d'un simple compteur :
     \label{ttab:BasicCnt}
 \end{table}
 
-- Implémenter cette table de vérité en VHDL en utilisant un \textit{process} et en \textbf{respectant bien la priorité}. Contraindre le vecteur $q_n$ sur \textbf{8 bits}.
+\medskip
+
+- Décrire l'entité \textbf{counter} et l'architecture \textbf{rtl} de cette table de vérité en VHDL en utilisant un \textit{process} et en \textbf{respectant bien la priorité}. Contraindre le vecteur $q_n$ sur \textbf{8 bits}.
 
 \medskip
 
@@ -58,3 +60,6 @@ On veut faire un compteur qui s’incrémente toutes les secondes. On veut visua
 
 - Compiler et programmer. En utilisant l'analyseur logique, déclencher l'acquisition lorsque \textit{en} vaut $1$. Vérifier que \textit{en} est à $1$ que pendant un seul coup d'horloge.
 
+\medskip
+
+- Ajouter une contrainte de temps à votre projet pour que le synthétiseur détermine la fréquence maximale de votre design. Quelle est la fréquence maximale que le synthétiseur a déterminée pour votre design?
