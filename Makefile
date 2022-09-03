@@ -9,8 +9,18 @@ GH ?= gh
 GIT ?= git
 RELEASE_FILES ?= $(MKFILE_DIR)/$(PDF_FILE).pdf
 
+all: build
+
 build:
 	$(LTX) $(LTX_FLAGS) -jobname="$(PDF_FILE)" $(TEX_FILE)
+
+clean:
+	find $(MKFILE_DIR) \
+        -name "*.aux" -type f -delete -o \
+        -name "*.fls" -type f -delete -o \
+        -name "*.log" -type f -delete -o \
+        -name "*.out" -type f -delete -o \
+        -name "*.pdf" -type f -delete
 
 deploy_release:
 	$(GH) release create $(TAG) $(RELEASE_FILES) --target $(BRANCH)

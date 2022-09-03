@@ -1,5 +1,5 @@
 \subsection{Compteur}
-\label{sec:BasicCnt}
+\label{sec:basic_cnt}
 Un des blocs les plus utilisés en VHDL est le compteur. Ils sont très utiles dans plusieurs circonstances. Par exemple : compter des fronts, avoir des bases de temps, compter des événements \dots
 
 Voici la table de vérité d'un simple compteur : 
@@ -7,21 +7,24 @@ Voici la table de vérité d'un simple compteur :
 \begin{table}[ht]
     \centering
     \begin{tabular}{c c c c|c} 
-        $arst\_n$ & $clk$ & $srst$ &$en$ & $q_n$ \\ 
+        $arst\_n$ & $clk$ & $srst$ &$en$ & $q$ \\ 
         \hline
         0 & *           & * & * & 0 \\
         1 & \risingedge & 1 & * & 0 \\
-        1 & \risingedge & 0 & 0 & $q_n$ \\
-        1 & \risingedge & 0 & 1 & $q_n + 1$
+        1 & \risingedge & 0 & 1 & $q + 1$ \\
+        1 & \risingedge & 0 & 0 & $q$
 
     \end{tabular}
     \caption{Table de vérité d'un compteur}
-    \label{ttab:BasicCnt}
+    \label{tab:basic_cnt}
 \end{table}
+
+
+- Dessiner sur une feuille l'entité du compteur en se basant sur la table de vérité \ref{tab:basic_cnt}. Pour la sortie \textit{q} specifier \textbf{N} comme taille du vecteur.
 
 \medskip
 
-- Décrire l'entité \textbf{counter} et l'architecture \textbf{rtl} de cette table de vérité en VHDL en utilisant un \textit{process} et en \textbf{respectant bien la priorité}. Contraindre le vecteur $q_n$ sur \textbf{8 bits}.
+- Décrire l'entité \textbf{counter} et l'architecture \textbf{rtl\_counter} de cette table de vérité en VHDL en utilisant un \textit{process} et en \textbf{respectant bien la priorité}. Contraindre le vecteur $q$ sur \textbf{8 bits}.
 
 \medskip
 
@@ -38,6 +41,10 @@ Voici la table de vérité d'un simple compteur :
 \subsection{Cascade de compteurs}
 
 On veut faire un compteur qui s’incrémente toutes les secondes. On veut visualiser le contenu de ce compteur sur un afficheur sept segments. Son contenu sera affiché en hexadecimal. Ce compteur devra compter de $0_d$ à $15_d$.
+
+\medskip
+
+- Dessiner sur une feuille l’entité du composant qui a été décrit dans l'énoncé. Ce composant aura pour rôle d'être un composant de top level. Il regroupera toutes les instances ainsi que la logique de la question suivante.
 
 \medskip
 
